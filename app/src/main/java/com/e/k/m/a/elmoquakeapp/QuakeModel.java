@@ -1,5 +1,8 @@
 package com.e.k.m.a.elmoquakeapp;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by ahmedelmoselhy on 3/3/2018.
  */
@@ -7,8 +10,9 @@ package com.e.k.m.a.elmoquakeapp;
 public class QuakeModel {
 
     private String quakeLocation;
-    private String quakeMagnitude;
-    private String quakeDate;
+    private String quakeUrl;
+    private double quakeMagnitude;
+    private long quakeDate;
 
     public QuakeModel() {
     }
@@ -21,19 +25,32 @@ public class QuakeModel {
         this.quakeLocation = quakeLocation;
     }
 
-    public String getQuakeMagnitude() {
+    public double getQuakeMagnitude() {
         return quakeMagnitude;
     }
 
-    public void setQuakeMagnitude(String quakeMagnitude) {
+    public void setQuakeMagnitude(double quakeMagnitude) {
         this.quakeMagnitude = quakeMagnitude;
     }
 
-    public String getQuakeDate() {
+    public long getQuakeDate() {
         return quakeDate;
     }
 
-    public void setQuakeDate(String quakeDate) {
+    public void setQuakeDate(long quakeDate) {
         this.quakeDate = quakeDate;
     }
+
+    public Date handleDateFormat(long timeMiliSeconds){
+        Date date = new Date(timeMiliSeconds);
+        return date;
+    }
+    public String getQuakeUrl() {
+        return quakeUrl;
+    }
+
+    public void setQuakeUrl(String quakeUrl) {
+        this.quakeUrl = quakeUrl;
+    }
+
 }
